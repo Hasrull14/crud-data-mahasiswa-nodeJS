@@ -14,7 +14,10 @@ const { body, validationResult, check } = require("express-validator");
 
 //setup express
 const app = express();
-const port = 3000;
+
+// Render akan kasih port otomatis
+const PORT = process.env.PORT || 3000; //pake render buat hosting
+//const port = 3000; 
 
 //setup override // override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
@@ -330,6 +333,6 @@ app.use("/", (req, res) => {
   res.send("<h1>Page Not Found 404!</h1>");
 });
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`Mongo Contact App | listening at http://localhost:${port}`);
 });
