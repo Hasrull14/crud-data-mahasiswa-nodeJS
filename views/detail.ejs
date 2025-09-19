@@ -1,0 +1,31 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Detail Mahasiswa</h2>
+            <% if (!contact) { %>
+                <div class="alert alert-danger fw-bold text-center" role="alert">
+                    Data Mahasiswa tidak ada! <br>
+                    <a href="/contact" class="btn btn-outline-danger fw-normal mt-3">&laquo;kembali ke daftar mahasiswa</a>
+                </div>
+            <% } else{ %>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Nama : <%= contact.nama %></h5>
+                    <h6 class="card_subtitle mb-2 text-muted">NPM : <%= contact.npm %></h6>
+                    <p class="card-text">No.HP : <%= contact.nohp %></p>
+                    <p class="card-text">ID : <%= contact.id %></p>
+                    <!-- <a href="/contact/delete" class="btn btn-outline-danger mb-3 w-100 "><i class="bi bi-trash3-fill"></i>Hapus</a> //big button style-->
+                    <a href="/contact/edit/<%= contact.id%>" class="btn btn-primary badge mb-3"><i class="bi bi-pencil-square"></i></i>Edit</a>
+                    <!-- <a href="/contact/delete/<%= //contact.id%>" class="btn btn-dark badge mb-3" onclick="return confirm('Apakah anda yakin menghapus kontak ini?')"><i class="bi bi-trash3-fill"></i>Hapus</a> -->
+
+                    <form method="POST" action="/contact?_method=DELETE" class="d-inline">
+                        <input type="hidden" name="id" value="<%= contact.id %>">
+                        <button type="submit" class="btn btn-dark badge ms-1" onclick="return confirm('Apakah anda yakin menghapus kontak ini?')"><i class="bi bi-trash3-fill"></i>Delete resource</button>
+                    </form>
+                    <a href="/contact" class="btn btn-outline-success w-100 fw-bold"><i class="bi bi-arrow-left-circle-fill"></i>Kembali ke daftar contact</a>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>

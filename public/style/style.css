@@ -1,0 +1,9 @@
+body {
+  padding-top: 70px; /* biar konten tidak ketiban navbar fixed */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1; /* biar footer selalu di bawah */
+}

@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 bg-light">
+            <h2>Form Ubah Data Mahasiswa</h2>
+
+            <% if (typeof errors != 'undefined') { //kalo undefined berarti tidak ada error%>
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        <% errors.forEach(error => { %>
+                        <li><%= error.msg %></li>
+                        <% }) %>
+                    </ul>
+                </div>
+            <% } %>
+
+            <form method="post" action="/contact?_method=PUT">
+                <input type="hidden" name="_id" value="<%=contact.id%>">
+                <input type="hidden" name="oldnpm" value="<%= contact.oldnpm || contact.npm %>">
+                <div class="mb-3">
+                    <label for="id" class="form-label">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" value="<%= contact.id %>" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="nama" class="form-label">Nama</label>
+                    <input type="text" class="form-control" id="nama" name="nama" value="<%= contact.nama %>" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="npm" class="form-label">NPM</label>
+                    <input type="npm" class="form-control" id="npm" name="npm" value="<%= contact.npm %>" required>
+                </div>
+
+                 <div class="mb-3">
+                    <label for="nohp" class="form-label">No HP</label>
+                    <input type="nohp" class="form-control" id="nohp" name="nohp" value="<%= contact.nohp %>" required>
+                 </div>
+                <button type="submit" class="btn btn-outline-primary me-1 fw-bold"><i class="bi bi-pencil-square"></i>Edit</button>
+                <a href="/contact/<%= contact.id %>" class="btn btn-outline-info fw-bold"><i class="bi bi-arrow-left-circle-fill"></i>Kembali</a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <img src="img/profil.jpg" alt="profil" class="img-thumbnail rounded-circle mt-2" width="200">
+            <h1 class="display-4"><%= namaLengkap %></h1>
+            <p class="lead">Student | Super Visor</p>
+
+            <h3>Partners List</h3>
+            <% partners.forEach(partner => { %>
+                <ul style="list-style-type: none;">
+                    <li text-center>Nama : <%= partner.nama %></li>
+                    <li>Company : <%= partner.company %></li>
+                </ul>
+             
+            <% }) %>
+        </div>
+    </div>
+</div>

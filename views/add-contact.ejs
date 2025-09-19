@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 bg-light">
+            <h2>Form Tambah Data Mahasiswa</h2>
+
+            <% if (typeof errors != 'undefined') { //kalo undefined berarti tidak ada error%>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <ul class="mb-0">
+                        <% errors.forEach(error => { %>
+                        <li><%= error.msg %></li>
+                        <% }) %>
+                    </ul>
+                    <button type="button" class="btn-close mt-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <% } %>
+
+            <form method="post" action="/contact">
+                <div class="mb-3">
+                    <label for="nama" class="form-label">Nama</label>
+                    <input type="text" class="form-control" id="nama" name="nama" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="npm" class="form-label">NPM</label>
+                    <input type="npm" class="form-control" id="npm" name="npm" required>
+                </div>
+
+                 <div class="mb-3">
+                    <label for="nohp" class="form-label">No HP</label>
+                    <input type="nohp" class="form-control" id="nohp" name="nohp" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Tambah Data</button>
+            </form>
+        </div>
+    </div>
+</div>

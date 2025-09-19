@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary text-light shadow-sm fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand text-light" href="#">Web Students</a>
+        <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active text-light" aria-current="page" href="/">Home</a>
+                </li>
+               
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Data
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/contact">Lihat Mahasiswa</a></li>
+                        <li><a class="dropdown-item" href="/contact/add">Tambah Mahasiswa</a></li>
+                    </ul>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link text-light" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled text-light" aria-disabled="true">Admin</a>
+                </li>
+            </ul>
+            <form method="post" action="/cari"  role="search" class="d-flex">
+            <!-- <form class="d-flex" role="search"> -->
+                <input class="form-control me-2" type="search" name="nama" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-outline-dark text-light" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
